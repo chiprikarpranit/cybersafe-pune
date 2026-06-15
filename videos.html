@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cyber Awareness Videos</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    /* ===== VIDEO HERO ===== */
+    .video-hero {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .video-hero h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .video-hero p {
+      font-size: 16px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* ===== VIDEO SECTION ===== */
+    .video-section {
+      padding: 50px 20px;
+      background: #f4f7fb;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      color: #1e3a8a;
+      font-size: 24px;
+      margin-bottom: 35px;
+    }
+
+    /* ===== VIDEO ROW ===== */
+    .video-row {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== VIDEO CARD ===== */
+    .video-card {
+      background: white;
+      padding: 0;
+      flex: 1;
+      max-width: 520px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+      text-align: left;
+    }
+
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(37,99,235,0.15);
+    }
+
+    /* CARD TOP BANNER */
+    .video-card-banner {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 20px 25px;
+    }
+
+    .video-card-banner h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  color: white !important;
+}
+
+    .video-card-banner p {
+      margin: 0;
+      font-size: 13px;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    /* VIDEO PLAYER */
+    .video-card video {
+      width: 100%;
+      display: block;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    /* CARD BOTTOM INFO */
+    .video-card-body {
+      padding: 18px 25px;
+    }
+
+    .video-card-body .tag {
+      display: inline-block;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .video-card-body p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ===== TIPS SECTION ===== */
+    .tips-section {
+      background: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .tips-section h2 {
+      color: #1e3a8a;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .tips-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+    .tip-card {
+      background: #f4f7fb;
+      border-radius: 14px;
+      padding: 25px 20px;
+      border-top: 4px solid #2563eb;
+      transition: 0.3s;
+    }
+
+    .tip-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(37,99,235,0.12);
+    }
+
+    .tip-card .tip-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .tip-card p {
+      font-size: 14px;
+      color: #444;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cyber Awareness Videos</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="videos.html" class="active">Videos</a>
+  <a href="resources.html">Resources</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="about.html">About Us</a>
+</nav>
+
+<!-- HERO -->
+<div class="video-hero">
+  <h2>🎬 Cyber Crime Awareness Videos</h2>
+  <p>Watch these short videos to understand how cyber scams work and how to stay safe online.</p>
+</div>
+
+<!-- VIDEOS -->
+<section class="video-section">
+
+  <h2>Watch & Learn</h2>
+
+  <div class="video-row">
+
+    <!-- OTP SCAM -->
+    <div class="video-card">
+      <div class="video-card-banner">
+        <h3>🔐 OTP Scam Awareness</h3>
+        <p>This video explains how scammers manipulate people to access their phones and steal OTPs. Stay alert and never trust unknown strangers.</p>
+      </div>
+
+      <video controls>
+        <source src="otp.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+
+      
+    </div>
+
+    <!-- DIGITAL ARREST -->
+    <div class="video-card">
+      <div class="video-card-banner">
+        <h3>⚠️ Digital Arrest Awareness</h3>
+        <p>This video explains how fraudsters use fake police threats (digital arrest) to scare people and steal money or data. Always stay alert and verify before trusting.</p>
+      </div>
+
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+
+     
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TIPS SECTION -->
+<section class="tips-section">
+  <h2>🛡️ Quick Safety Tips</h2>
+  <div class="tips-grid">
+
+    <div class="tip-card">
+      <div class="tip-icon">🔒</div>
+      <p>Never share your OTP with anyone, even if they claim to be from your bank.</p>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-icon">📵</div>
+      <p>Disconnect suspicious video calls immediately. Real police don't arrest digitally.</p>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-icon">🔗</div>
+      <p>Never click unknown links received via SMS, WhatsApp, or email.</p>
+    </div>
+
+    <div class="tip-card">
+      <div class="tip-icon">💰</div>
+      <p>Never send money to strangers online, no matter how convincing they sound.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Cyber Awareness Project</p>
+</footer>
+
+</body>
+</html>

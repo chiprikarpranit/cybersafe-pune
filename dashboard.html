@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard - CyberSafe Pune</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    /* ===== DASHBOARD HERO ===== */
+    .dash-hero {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .dash-hero h2 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .dash-hero p {
+      opacity: 0.9;
+      font-size: 15px;
+    }
+
+    /* ===== DASHBOARD BODY ===== */
+    .dashboard {
+      padding: 40px 20px;
+      background: #f4f7fb;
+    }
+
+    /* ===== STATS CARDS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 40px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid #2563eb;
+      transition: 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 28px rgba(37,99,235,0.15);
+    }
+
+    .stat-card .stat-icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .stat-card .stat-num {
+      font-size: 30px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    .stat-card .stat-label {
+      font-size: 13px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    /* ===== SECTION TITLE ===== */
+    .section-title {
+      text-align: center;
+      color: #1e3a8a;
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+
+    /* ===== SESSION INFO ===== */
+    .session-info {
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 15px;
+      background: #f4f7fb;
+      border-radius: 10px;
+      border-left: 4px solid #2563eb;
+    }
+
+    .info-item .info-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .info-item .info-text strong {
+      display: block;
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 3px;
+    }
+
+    .info-item .info-text span {
+      font-size: 15px;
+      color: #1e3a8a;
+      font-weight: bold;
+    }
+
+    /* ===== TOPICS ===== */
+    .topics-box {
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    }
+
+    .topics-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .topic-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      background: #eff6ff;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #1e3a8a;
+    }
+
+    .topic-item .t-icon {
+      font-size: 20px;
+    }
+
+    /* ===== GRAPHS ===== */
+    .graphs-box {
+      max-width: 1000px;
+      margin: 0 auto 40px;
+    }
+
+    .graph-card {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid #2563eb;
+      transition: 0.3s;
+    }
+
+    .graph-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 12px 28px rgba(37,99,235,0.12);
+    }
+
+    .graph-card h3 {
+      color: #1e3a8a;
+      margin-bottom: 18px;
+      font-size: 17px;
+      text-align: center;
+    }
+
+    .graph-card iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* ===== TEAM ===== */
+    .team-box {
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+      text-align: center;
+    }
+
+    .team-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .team-item {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 18px 10px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+      transition: 0.3s;
+    }
+
+    .team-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+    }
+
+    .team-item .t-avatar {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .guide-tag {
+      margin-top: 20px;
+      display: inline-block;
+      background: #f0f4ff;
+      border: 2px solid #2563eb;
+      color: #1e3a8a;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    /* ===== TABLE ===== */
+    .table-box {
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+      overflow-x: auto;
+    }
+
+    .dash-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .dash-table thead {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+    }
+
+    .dash-table thead th {
+      padding: 14px 18px;
+      text-align: left;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .dash-table thead th:first-child { border-radius: 10px 0 0 0; }
+    .dash-table thead th:last-child  { border-radius: 0 10px 0 0; }
+
+    .dash-table tbody tr {
+      border-bottom: 1px solid #e5e7eb;
+      transition: 0.2s;
+    }
+
+    .dash-table tbody tr:hover { background: #eff6ff; }
+    .dash-table tbody tr:last-child { border-bottom: none; }
+
+    .dash-table tbody td {
+      padding: 14px 18px;
+      color: #333;
+      vertical-align: middle;
+    }
+
+    .dash-table tbody td:first-child {
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    .badge-done {
+      display: inline-block;
+      background: #d1fae5;
+      color: #065f46;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .badge-class {
+      display: inline-block;
+      background: #eff6ff;
+      color: #1e3a8a;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📊 Project Dashboard</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="videos.html">Videos</a>
+  <a href="resources.html">Resources</a>
+  <a href="quiz.html">Quiz</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="dashboard.html" class="active">Dashboard</a>
+  <a href="about.html">About Us</a>
+</nav>
+
+<!-- HERO -->
+<div class="dash-hero">
+  <h2>📊 CyberSafe Pune — Project Dashboard</h2>
+  <p>Overview of the Cyber Security Awareness Session conducted at Prerna School, Pune</p>
+</div>
+
+<div class="dashboard">
+
+  <!-- STATS -->
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-icon">⭐</div>
+      <div class="stat-num">4.5</div>
+      <div class="stat-label">Avg Session Rating</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">📝</div>
+      <div class="stat-num">20</div>
+      <div class="stat-label">Feedback Received</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">🧠</div>
+      <div class="stat-num">48</div>
+      <div class="stat-label">Quiz Attempts</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon">✅</div>
+      <div class="stat-num">1</div>
+      <div class="stat-label">Sessions Done</div>
+    </div>
+
+  </div>
+
+  <!-- SESSION INFO -->
+  <h2 class="section-title">🏫 Session Details</h2>
+  <div class="session-info">
+    <div class="info-row">
+
+      <div class="info-item">
+        <div class="info-icon">🏫</div>
+        <div class="info-text">
+          <strong>School Name</strong>
+          <span>Prerna School, Ambegaon Pathar</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <strong>Location</strong>
+          <span>Pune, Maharashtra</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">📅</div>
+        <div class="info-text">
+          <strong>Date</strong>
+          <span>28 April 2026</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">🎓</div>
+        <div class="info-text">
+          <strong>Classes</strong>
+          <span>8th, 9th & 10th Standard</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACTIVITY TABLE -->
+  <h2 class="section-title">📋 Session Activity Table</h2>
+  <div class="table-box">
+    <table class="dash-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Topic</th>
+          <th>Class</th>
+          <th>Students</th>
+          <th>Method</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>🛡️ Intro to Cyber Security</td>
+          <td><span class="badge-class">8th</span></td>
+          <td>20</td>
+          <td>Interactive Talk</td>
+          <td><span class="badge-done">✅ Done</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>🔐 OTP Scam Awareness</td>
+          <td><span class="badge-class">8th & 9th</span></td>
+          <td>38</td>
+          <td>Video Demo</td>
+          <td><span class="badge-done">✅ Done</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>🎣 Phishing Attacks</td>
+          <td><span class="badge-class">9th</span></td>
+          <td>18</td>
+          <td>Real Examples</td>
+          <td><span class="badge-done">✅ Done</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>📱 Social Media Safety</td>
+          <td><span class="badge-class">9th & 10th</span></td>
+          <td>33</td>
+          <td>Discussion</td>
+          <td><span class="badge-done">✅ Done</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>🔑 Strong Password Practices</td>
+          <td><span class="badge-class">10th</span></td>
+          <td>15</td>
+          <td>Interactive Talk</td>
+          <td><span class="badge-done">✅ Done</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SURVEY GRAPHS -->
+  <h2 class="section-title">📊 Survey Analysis</h2>
+  <div class="graphs-box">
+
+    <div class="graph-card">
+      <h3>Class Distribution</h3>
+      <iframe seamless scrolling="no"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRJR0cntMIQJDWBq8BHbtlTAN7eb45uivXNe_K35UOXRvDIDNepROAGagpQcK_bpF3k5NMJBkAX79Ao/pubchart?oid=144638275&format=interactive">
+      </iframe>
+    </div>
+
+    <div class="graph-card">
+      <h3>Cyber Awareness Responses</h3>
+      <iframe seamless scrolling="no"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRJR0cntMIQJDWBq8BHbtlTAN7eb45uivXNe_K35UOXRvDIDNepROAGagpQcK_bpF3k5NMJBkAX79Ao/pubchart?oid=767157550&format=interactive">
+      </iframe>
+    </div>
+
+    <div class="graph-card">
+      <h3>Importance of Cyber Security</h3>
+      <iframe seamless scrolling="no"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRJR0cntMIQJDWBq8BHbtlTAN7eb45uivXNe_K35UOXRvDIDNepROAGagpQcK_bpF3k5NMJBkAX79Ao/pubchart?oid=1951066569&format=interactive">
+      </iframe>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Cyber Awareness Project</p>
+</footer>
+
+</body>
+</html>

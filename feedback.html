@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Feedback</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .form-hero {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .form-hero h2 { font-size: 26px; margin-bottom: 8px; }
+    .form-hero p { opacity: 0.9; font-size: 15px; }
+
+    .form-section {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1 / -1; }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: bold;
+      color: #1e3a8a;
+      text-align: center;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1.5px solid #cbd5e1;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      color: #333;
+      transition: 0.2s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #2563eb;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+
+    /* BIG TEXTAREA */
+    .form-group textarea {
+      height: 130px;
+      resize: vertical;
+      width: 100%;
+    }
+
+    .form-group input:invalid:not(:placeholder-shown),
+    .form-group select:invalid,
+    .form-group textarea:invalid:not(:placeholder-shown) {
+      border-color: #ef4444;
+    }
+
+    .form-group input:valid,
+    .form-group select:valid,
+    .form-group textarea:valid {
+      border-color: #10b981;
+    }
+
+    /* STAR RATING - CENTERED */
+    .rating-label {
+      font-size: 13px;
+      font-weight: bold;
+      color: #1e3a8a;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .rating-group {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .rating-group input[type="radio"] { display: none; }
+
+    .rating-group label {
+      font-size: 36px;
+      color: #cbd5e1;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: normal;
+      text-align: left;
+    }
+
+    .rating-group input[type="radio"]:checked ~ label,
+    .rating-group label:hover,
+    .rating-group label:hover ~ label {
+      color: #2563eb;
+    }
+
+    /* SUBMIT */
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+    }
+
+    /* SUCCESS */
+    .success-box {
+      display: none;
+      max-width: 700px;
+      margin: 30px auto;
+      background: #d1fae5;
+      border: 2px solid #10b981;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+    .success-box h3 { color: #065f46; font-size: 22px; margin-bottom: 10px; }
+    .success-box p { color: #047857; font-size: 15px; }
+
+    #success:target { display: block; }
+    #success:target + .form-section { display: none; }
+
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .topics-grid { grid-template-columns: 1fr; }
+      .form-section { padding: 20px; margin: 20px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<header><h1>CyberSafe Pune</h1></header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="videos.html">Videos</a>
+  <a href="resources.html">Resources</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="feedback.html" class="active">Feedback</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="about.html">About Us</a>
+</nav>
+
+<div class="form-hero">
+  <h2>📝 Student Feedback Form</h2>
+  <p>Share your experience from the Cyber Security Awareness Session</p>
+</div>
+
+<!-- SUCCESS MESSAGE -->
+<div class="success-box" id="success">
+  <h3>✅ Thank You for Your Feedback!</h3>
+  <p>Your response has been recorded successfully. We appreciate your time!</p>
+</div>
+
+<!-- FORM -->
+<div class="form-section">
+  <form action="#success" method="get">
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Student Name *</label>
+        <input type="text" name="student_name" placeholder="Enter your full name" required minlength="3">
+      </div>
+
+      <div class="form-group">
+        <label>Class / Standard *</label>
+        <select name="class" required>
+          <option value="">Select Class</option>
+          <option value="8th">8th Standard</option>
+          <option value="9th">9th Standard</option>
+          <option value="10th">10th Standard</option>
+        </select>
+      </div>
+
+      <!-- SCHOOL NAME - EMPTY -->
+      <div class="form-group">
+        <label>School Name *</label>
+        <input type="text" name="school" placeholder="Enter your school name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Date of Session *</label>
+        <input type="date" name="session_date" required>
+      </div>
+
+      <!-- STAR RATING - CENTERED -->
+      <div class="form-group full">
+        <div class="rating-label">Rate the Session * (click a star)</div>
+        <div class="rating-group">
+          <input type="radio" name="rating" id="star5" value="5" required>
+          <label for="star5">★</label>
+          <input type="radio" name="rating" id="star4" value="4">
+          <label for="star4">★</label>
+          <input type="radio" name="rating" id="star3" value="3">
+          <label for="star3">★</label>
+          <input type="radio" name="rating" id="star2" value="2">
+          <label for="star2">★</label>
+          <input type="radio" name="rating" id="star1" value="1">
+          <label for="star1">★</label>
+        </div>
+      </div>
+
+      <!-- BIG TEXTAREA - FULL WIDTH -->
+      <div class="form-group full">
+        <label>What did you learn from this session? *</label>
+        <textarea name="learned" placeholder="Write what you learned..." required minlength="10"></textarea>
+      </div>
+
+      <div class="form-group full">
+        <label>Any suggestions for improvement?</label>
+        <textarea name="suggestions" placeholder="Your suggestions (optional)..."></textarea>
+      </div>
+
+    </div>
+    <button type="submit" class="submit-btn">✅ Submit Feedback</button>
+  </form>
+</div>
+
+<footer><p>© 2026 Cyber Awareness Project</p></footer>
+
+</body>
+</html>

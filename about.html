@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ===== ABOUT PAGE REDESIGN ===== */
+
+    .about-hero {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .about-hero h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .about-hero p {
+      font-size: 16px;
+      max-width: 700px;
+      margin: auto;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+    /* ===== OBJECTIVES GRID ===== */
+    .objectives-section {
+      padding: 50px 20px;
+      text-align: center;
+      background: #f4f7fb;
+    }
+
+    .objectives-section h2 {
+      color: #1e3a8a;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .obj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .obj-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      border-top: 4px solid #2563eb;
+    }
+
+    .obj-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+    }
+
+    .obj-card .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .obj-card h3 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .obj-card ul {
+      text-align: left;
+      padding-left: 5px;
+    }
+
+    .obj-card ul li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ===== TEAM SECTION ===== */
+    .team-section {
+      padding: 50px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .team-section h2 {
+      color: #1e3a8a;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .team-section p.subtitle {
+      color: #888;
+      margin-bottom: 35px;
+    }
+
+    .team-grid-new {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .team-card-new {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 30px 20px;
+      border-radius: 16px;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+      transition: 0.3s;
+    }
+
+    .team-card-new:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(37,99,235,0.4);
+    }
+
+    .team-card-new .avatar {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    /* ===== GUIDE BOX ===== */
+    .guide-box {
+      margin: 30px auto 0;
+      max-width: 400px;
+      background: #f0f4ff;
+      border: 2px solid #2563eb;
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 16px;
+      color: #1e3a8a;
+    }
+
+    .guide-box span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>About Our Project</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="videos.html">Videos</a>
+  <a href="resources.html">Resources</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="about.html" class="active">About Us</a>
+</nav>
+
+<!-- HERO BANNER -->
+<div class="about-hero">
+  <h2>🛡️ Cyber Security Awareness Project</h2>
+  <p>
+    This project aims to spread awareness about cyber security and cyber crime among students.
+    We conducted real sessions in schools to educate students about online safety and threats.
+  </p>
+</div>
+
+<!-- OBJECTIVES, METHODOLOGY, OUTCOMES -->
+<section class="objectives-section">
+  <h2>What We Did</h2>
+  <div class="obj-grid">
+
+    <div class="obj-card">
+      <div class="icon">🎯</div>
+      <h3>Objectives</h3>
+      <ul>
+        <li>Create cyber awareness</li>
+        <li>Educate about online threats</li>
+        <li>Promote safe internet use</li>
+        <li>Reduce cyber risks</li>
+      </ul>
+    </div>
+
+    <div class="obj-card">
+      <div class="icon">⚙️</div>
+      <h3>Methodology</h3>
+      <ul>
+        <li>School awareness sessions</li>
+        <li>Real-life examples</li>
+        <li>Interactive teaching</li>
+        <li>Video demonstrations</li>
+      </ul>
+    </div>
+
+    <div class="obj-card">
+      <div class="icon">📊</div>
+      <h3>Outcomes</h3>
+      <ul>
+        <li>Improved awareness</li>
+        <li>Better online safety</li>
+        <li>Understanding of scams</li>
+        <li>Responsible behavior</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section">
+  <h2>👥 Project Team</h2>
+  <p class="subtitle">The people behind this project</p>
+
+  <div class="team-grid-new">
+
+    <div class="team-card-new">
+      <div class="avatar">👩‍💻</div>
+      Madhvi Kune
+    </div>
+
+    <div class="team-card-new">
+      <div class="avatar">👨‍💻</div>
+      Ashish Survase
+    </div>
+
+    <div class="team-card-new">
+      <div class="avatar">👨‍💻</div>
+      Chetan Gatane
+    </div>
+
+    <div class="team-card-new">
+      <div class="avatar">👨‍💻</div>
+      Pranit Chiprikar
+    </div>
+
+  </div>
+
+  <div class="guide-box">
+    🎓 <span>Project Guide:</span> Prof. Supriya Sagar
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Cyber Awareness Project</p>
+</footer>
+
+</body>
+</html>

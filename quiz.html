@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cyber Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    /* ===== QUIZ HERO ===== */
+    .quiz-hero {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .quiz-hero h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .quiz-hero p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* ===== QUIZ SECTION ===== */
+    .quiz-section {
+      padding: 40px 20px;
+      background: #f4f7fb;
+      text-align: center;
+    }
+
+    /* ===== QUESTION CARD ===== */
+    .question {
+      background: white;
+      padding: 25px 30px;
+      margin: 20px auto;
+      max-width: 650px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: left;
+      border-left: 5px solid #2563eb;
+      transition: 0.3s;
+    }
+
+    .question:hover {
+      box-shadow: 0 12px 32px rgba(37,99,235,0.15);
+      transform: translateY(-3px);
+    }
+
+    .question p {
+      font-weight: bold;
+      font-size: 16px;
+      color: #1e3a8a;
+      margin-bottom: 15px;
+    }
+
+    /* ===== OPTIONS ===== */
+    .option {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px;
+      margin: 10px 0;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .option:hover {
+      background: #eff6ff;
+      border: 2px solid #2563eb;
+    }
+
+    .option input {
+      margin: 0;
+      transform: scale(1.3);
+      flex-shrink: 0;
+      accent-color: #2563eb;
+    }
+
+    .option span {
+      font-size: 15px;
+      color: #333;
+    }
+
+    /* ===== SUBMIT BUTTON ===== */
+    .quiz-submit-btn {
+      display: inline-block;
+      margin: 25px auto;
+      padding: 14px 40px;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+      transition: 0.3s;
+      letter-spacing: 1px;
+    }
+
+    .quiz-submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(37,99,235,0.4);
+      background: linear-gradient(135deg, #2563eb, #1e3a8a);
+    }
+
+    /* ===== RESULT BOX ===== */
+    .result-box {
+      display: none;
+      margin: 30px auto;
+      max-width: 650px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    #result:target {
+      display: block;
+    }
+
+    .result-header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .result-header h3 {
+      font-size: 22px;
+      margin: 0 0 5px 0;
+    }
+
+    .result-header p {
+      opacity: 0.9;
+      margin: 0;
+    }
+
+    .result-body {
+      padding: 25px 30px;
+      text-align: left;
+    }
+
+    .answer-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      background: #f0f9ff;
+      border-radius: 10px;
+      border-left: 4px solid #2563eb;
+      font-size: 15px;
+    }
+
+    .answer-item .num {
+      background: #2563eb;
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 20px;
+      padding: 15px;
+      background: #fef9c3;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #854d0e;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Cyber Awareness Quiz</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="videos.html">Videos</a>
+  <a href="resources.html">Resources</a>
+  <a href="quiz.html" class="active">Quiz</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="about.html">About Us</a>
+</nav>
+
+<!-- HERO -->
+<div class="quiz-hero">
+  <h2>🧠 Test Your Knowledge</h2>
+  <p>Answer all 5 questions and check your score!</p>
+</div>
+
+<section class="quiz-section">
+
+  <form action="#result" method="get">
+
+    <div class="question">
+      <p>1. What should you do with OTP?</p>
+      <label class="option"><input type="radio" name="q1" value="a" required><span>Share with friends</span></label>
+      <label class="option"><input type="radio" name="q1" value="b"><span>Share with bank</span></label>
+      <label class="option"><input type="radio" name="q1" value="c"><span>Do not share</span></label>
+    </div>
+
+    <div class="question">
+      <p>2. Which is a strong password?</p>
+      <label class="option"><input type="radio" name="q2" value="a" required><span>123456</span></label>
+      <label class="option"><input type="radio" name="q2" value="b"><span>abc123</span></label>
+      <label class="option"><input type="radio" name="q2" value="c"><span>P@ssW0rd#99</span></label>
+    </div>
+
+    <div class="question">
+      <p>3. What is phishing?</p>
+      <label class="option"><input type="radio" name="q3" value="a" required><span>Game</span></label>
+      <label class="option"><input type="radio" name="q3" value="b"><span>Fake message to steal data</span></label>
+      <label class="option"><input type="radio" name="q3" value="c"><span>Antivirus</span></label>
+    </div>
+
+    <div class="question">
+      <p>4. Should you click unknown links?</p>
+      <label class="option"><input type="radio" name="q4" value="a" required><span>Yes</span></label>
+      <label class="option"><input type="radio" name="q4" value="b"><span>No</span></label>
+    </div>
+
+    <div class="question">
+      <p>5. Is cyber security important?</p>
+      <label class="option"><input type="radio" name="q5" value="a" required><span>Yes</span></label>
+      <label class="option"><input type="radio" name="q5" value="b"><span>No</span></label>
+    </div>
+
+    <button type="submit" class="quiz-submit-btn">Submit Quiz ✅</button>
+
+  </form>
+
+  <!-- RESULT BOX -->
+  <div id="result" class="result-box">
+
+    <div class="result-header">
+      <h3>✔ Correct Answers</h3>
+      <p>Check how many you got right!</p>
+    </div>
+
+    <div class="result-body">
+
+      <div class="answer-item">
+        <div class="num">1</div>
+        <span>Do not share OTP with anyone</span>
+      </div>
+
+      <div class="answer-item">
+        <div class="num">2</div>
+        <span>P@ssW0rd#99 is a strong password</span>
+      </div>
+
+      <div class="answer-item">
+        <div class="num">3</div>
+        <span>Phishing is a fake message to steal data</span>
+      </div>
+
+      <div class="answer-item">
+        <div class="num">4</div>
+        <span>No — never click unknown links</span>
+      </div>
+
+      <div class="answer-item">
+        <div class="num">5</div>
+        <span>Yes — cyber security is very important</span>
+      </div>
+
+      <p class="note">👉 Count your correct answers to get your score out of 5!</p>
+
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Cyber Awareness Project</p>
+</footer>
+
+</body>
+</html>

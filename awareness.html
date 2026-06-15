@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cyber Awareness</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    /* ===== HERO ===== */
+    .awareness-hero {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .awareness-hero h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .awareness-hero p {
+      font-size: 16px;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    /* ===== SESSION INFO ===== */
+    .session-section {
+      padding: 50px 20px;
+      background: #f4f7fb;
+      text-align: center;
+    }
+
+    .session-section h2 {
+      color: #1e3a8a;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .session-box {
+      max-width: 750px;
+      margin: auto;
+      background: white;
+      border-radius: 16px;
+      padding: 30px 35px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: left;
+      border-left: 5px solid #2563eb;
+    }
+
+    .session-box p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    /* ===== TOPICS GRID ===== */
+    .topics-section {
+      padding: 50px 20px;
+      background: white;
+      text-align: center;
+    }
+
+    .topics-section h2 {
+      color: #1e3a8a;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .topics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.topic-card {
+  width: 220px;
+}
+
+    .topic-card {
+      background: #f4f7fb;
+      border-radius: 14px;
+      padding: 25px 15px;
+      border-top: 4px solid #2563eb;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(37,99,235,0.15);
+      background: #eff6ff;
+    }
+
+    .topic-card .topic-icon {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .topic-card p {
+      font-size: 14px;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin: 0;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-section {
+      padding: 50px 20px;
+      background: #f4f7fb;
+      text-align: center;
+    }
+
+    .gallery-section h2 {
+      color: #1e3a8a;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.gallery-item {
+  width: 300px;
+}
+
+    .gallery-item {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 28px rgba(37,99,235,0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(30,58,138,0.85));
+      color: white;
+      padding: 20px 15px 12px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 0 0 14px 14px;
+    }
+
+    /* ===== SURVEY SECTION ===== */
+    .graph-section {
+      padding: 50px 20px;
+      background: white;
+      text-align: center;
+    }
+
+    .graph-section h2 {
+      color: #1e3a8a;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .graph-card {
+      max-width: 720px;
+      margin: 25px auto;
+      padding: 25px;
+      background: #f4f7fb;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      border-top: 4px solid #2563eb;
+    }
+
+    .graph-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 28px rgba(37,99,235,0.12);
+    }
+
+    .graph-card h3 {
+      color: #1e3a8a;
+      margin-bottom: 18px;
+      font-size: 17px;
+    }
+
+    .graph-card iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Cyber Security Awareness Activity</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="awareness.html" class="active">Awareness</a>
+    <a href="videos.html">Videos</a>
+    <a href="resources.html">Resources</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="about.html">About Us</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="awareness-hero">
+    <h2>🏫 Awareness Session at Prerna School</h2>
+    <p>
+      We successfully conducted a Cyber Security and Cyber Crime Awareness Session at
+      <b>Prerna School, Ambegaon Pathar, Pune</b> for students of 8th, 9th, and 10th standards.
+    </p>
+  </div>
+
+  <!-- SESSION INFO -->
+  <section class="session-section">
+    <h2>About the Session</h2>
+    <div class="session-box">
+      <p>
+        Our team visited the school and educated students about online safety and cyber threats
+        through interactive teaching, real-life examples, and video demonstrations.
+      </p>
+      <p>
+        Students actively participated and showed great interest in learning how to stay safe online.
+        The session was well received by both students and school staff.
+      </p>
+    </div>
+  </section>
+
+  <!-- TOPICS COVERED -->
+  <section class="topics-section">
+    <h2>📚 Topics Covered</h2>
+    <div class="topics-grid">
+
+      <div class="topic-card">
+        <div class="topic-icon">🛡️</div>
+        <p>Introduction to Cyber Security</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">🔐</div>
+        <p>OTP Scam Awareness</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">🎣</div>
+        <p>Phishing Attacks</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">📱</div>
+        <p>Social Media Safety</p>
+      </div>
+
+      <div class="topic-card">
+        <div class="topic-icon">🔑</div>
+        <p>Strong Password Practices</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <h2>📸 Session Photos</h2>
+    <div class="gallery">
+
+      <div class="gallery-item">
+        <img src="img1.jpg" alt="Team with school staff" loading="lazy">
+        <div class="caption">Team with School Staff</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img2.jpg" alt="Classroom session" loading="lazy">
+        <div class="caption">Classroom Session</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img3.jpg" alt="Students attending" loading="lazy">
+        <div class="caption">Students Attending</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img4.jpg" alt="Demonstration" loading="lazy">
+        <div class="caption">Live Demonstration</div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="img5.jpg" alt="Group photo" loading="lazy">
+        <div class="caption">Group Photo</div>
+      </div>
+
+    </div>
+  </section>
+
+  
+
+  <footer>
+    <p>© 2026 Cyber Awareness Project</p>
+  </footer>
+
+</body>
+
+</html>

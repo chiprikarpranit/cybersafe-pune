@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CyberSafe Pune</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin: 0 0 5px 0;
+    }
+
+    header p {
+      margin: 0;
+      opacity: 0.85;
+      font-size: 15px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #0f2460, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "🛡️";
+      position: absolute;
+      font-size: 300px;
+      opacity: 0.05;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .hero p {
+      font-size: 17px;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: white;
+      color: #1e3a8a;
+      padding: 13px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: white;
+      padding: 13px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      border: 2px solid white;
+      transition: 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #1e3a8a;
+      transform: translateY(-3px);
+    }
+
+    /* ===== STATS STRIP ===== */
+    .stats-strip {
+      background: #1e3a8a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 0;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 150px;
+      padding: 25px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-item .stat-num {
+      font-size: 28px;
+      font-weight: bold;
+      color: #93c5fd;
+    }
+
+    .stat-item .stat-label {
+      font-size: 13px;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+
+    /* ===== WHY SECTION ===== */
+    .why-section {
+      padding: 55px 20px;
+      text-align: center;
+      background: #f4f7fb;
+    }
+
+    .why-section h2 {
+      color: #1e3a8a;
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .why-section > p {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #555;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* ===== FEATURE CARDS ===== */
+    .feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 700px;
+  margin: auto;
+}
+
+    .feature-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+      transition: 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      border-bottom: 4px solid transparent;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 32px rgba(37,99,235,0.15);
+      border-bottom: 4px solid #2563eb;
+    }
+
+    .feature-card .f-icon {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .feature-card h3 {
+      color: #1e3a8a;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ===== KEY TIPS SECTION ===== */
+    .tips-section {
+      padding: 55px 20px;
+      background: white;
+      text-align: center;
+    }
+
+    .tips-section h2 {
+      color: #1e3a8a;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .tip-item {
+      background: #f4f7fb;
+      border-radius: 14px;
+      padding: 22px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      text-align: left;
+      transition: 0.3s;
+      border-left: 4px solid #2563eb;
+    }
+
+    .tip-item:hover {
+      transform: translateX(5px);
+      background: #eff6ff;
+    }
+
+    .tip-item .tip-icon {
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+
+    .tip-item p {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      opacity: 0.9;
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    .cta-section a {
+      display: inline-block;
+      background: white;
+      color: #1e3a8a;
+      padding: 13px 35px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .cta-section a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🛡️ CyberSafe Pune</h1>
+  <p>Cyber Security & Cyber Crime Awareness System</p>
+</header>
+
+<nav>
+  <a href="index.html" class="active">Home</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="videos.html">Videos</a>
+  <a href="resources.html">Resources</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="feedback.html">Feedback</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="about.html">About Us</a>
+  
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h2>Stay Safe in the Digital World 🌐</h2>
+  <p>Learn how to protect your personal data, avoid scams, and stay secure online.</p>
+  <div class="hero-buttons">
+    <a class="btn-primary" href="awareness.html">🚀 Get Started</a>
+    <a class="btn-secondary" href="quiz.html">🧠 Take Quiz</a>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-num">50+</div>
+    <div class="stat-label">Students Educated</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">5</div>
+    <div class="stat-label">Topics Covered</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">1</div>
+    <div class="stat-label">School Visited</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">2</div>
+    <div class="stat-label">Awareness Videos</div>
+  </div>
+</div>
+
+<!-- WHY SECTION -->
+<section class="why-section">
+  <h2>Why Cyber Awareness is Important</h2>
+  <p>
+    In today's digital age, students and users are constantly exposed to online risks like hacking,
+    phishing, and scams. Awareness helps individuals recognize threats and take preventive measures.
+  </p>
+
+  <div class="feature-grid">
+
+    <a href="protect.html" class="feature-card">
+      <div class="f-icon">🔒</div>
+      <h3>Protect Devices</h3>
+      <p>Secure your mobile, laptop, and accounts from hackers and unauthorized access.</p>
+    </a>
+
+    <a href="scam.html" class="feature-card">
+      <div class="f-icon">⚠️</div>
+      <h3>Avoid Scams</h3>
+      <p>Learn how to identify online frauds, fake calls, and phishing attempts.</p>
+    </a>
+
+    <a href="videos.html" class="feature-card">
+      <div class="f-icon">🎬</div>
+      <h3>Watch Videos</h3>
+      <p>Watch real cyber crime awareness videos to understand how scams work.</p>
+    </a>
+
+    <a href="quiz.html" class="feature-card">
+      <div class="f-icon">🧠</div>
+      <h3>Take the Quiz</h3>
+      <p>Test your cyber security knowledge with our interactive awareness quiz.</p>
+    </a>
+
+  </div>
+</section>
+
+<!-- KEY TIPS -->
+<section class="tips-section">
+  <h2>🛡️ Key Awareness Points</h2>
+  <div class="tips-grid">
+
+    <div class="tip-item">
+      <div class="tip-icon">🔐</div>
+      <p>Never share your OTP with anyone — not even your bank.</p>
+    </div>
+
+    <div class="tip-item">
+      <div class="tip-icon">🔑</div>
+      <p>Always use strong and unique passwords for every account.</p>
+    </div>
+
+    <div class="tip-item">
+      <div class="tip-icon">🔗</div>
+      <p>Avoid clicking on unknown or suspicious links in messages.</p>
+    </div>
+
+    <div class="tip-item">
+      <div class="tip-icon">📶</div>
+      <p>Be careful when using public WiFi — avoid sensitive transactions.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Learn More?</h2>
+  <p>Explore our awareness session, watch videos, and test your knowledge.</p>
+  <a href="awareness.html">Explore Now →</a>
+</section>
+
+<footer>
+  <p>© 2026 CyberSafe Project</p>
+</footer>
+
+</body>
+</html>
