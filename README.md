@@ -95,7 +95,7 @@ Run the database file using:
 | Chetan Gatane | 51368 |
 | Pranit Chiprikar | 51274 |
 
-**Project Guide:** Prof. Supriya Sagar
+**Project Guide:** Prof. Anushkaaaaaaaaaaa 
 
 ---
 
